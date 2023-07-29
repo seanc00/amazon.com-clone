@@ -24,23 +24,7 @@
         computerMove = 'paper';
       }
       // check to see if code works
-      console.log(computerMove);
-
-      /*
-      let playerScore;
-      let computerScore;
-
-      //code to determine winner
-      if (computerMove === 'rock') {
-        console.log('Draw!\n Player: ' + playerScore + ' Computer: ' + computerScore);
-      } else if (computerMove === 'paper') {
-        computerScore++;
-        console.log('Computer Wins!\n Player: ' + playerScore + ' Computer: ' + computerScore);
-      } else if (computerMove === 'scissors') {
-        playerScore++;
-        console.log('Player Wins!\n Player: ' + playerScore + ' Computer: ' + computerScore);
-      }
-      */
+      //console.log(computerMove);
 
       let result = '';
       //code to determine winner
@@ -51,8 +35,10 @@
       } else if (computerMove === 'scissors') {
         result = 'You Win!'
       }
+      // check code to see if works
+      //console.log(result);
 
-      console.log(result);
+      alert(`You picked Rock, Computer picked ${computerMove}. ${result}`);
     ">Rock</button>
     <button>Paper</button>
     <button>Scissors</button>
