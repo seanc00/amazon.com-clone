@@ -11,7 +11,6 @@ function chooseRock() {
   // check code to see if works
   //console.log(result);
   
-  computerMove.toUpperCase;
   alert(`You picked Rock, Computer picked ${computerMove}. ${result}`);
   return result;
 
@@ -29,7 +28,6 @@ function choosePaper() {
   }
   // check code to see if works
   //console.log(result);
-  computerMove.toUpperCase;
   alert(`You picked Paper, Computer picked ${computerMove}. ${result}`);
   return result;
 }
