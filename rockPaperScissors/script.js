@@ -4,6 +4,15 @@ const score = {
   losses: 0
 };
 
+function resetScore() {
+  score.wins = 0;
+  score.losses = 0;
+  score.draws = 0;
+
+  alert(`Score Reset
+Wins: ${score.wins}, Draws: ${score.draws}, Losses: ${score.losses}`);
+}
+
 function playGame(playerMove) {
   computerMove = pickComputerMove();
 
@@ -15,6 +24,7 @@ function playGame(playerMove) {
     } else if (computerMove === 'Scissors') {
       result = 'Draw!';
     }
+
   } else if (playerMove === 'Rock') {
     if (computerMove === 'Rock') {
       result = 'Draw!';
@@ -23,6 +33,7 @@ function playGame(playerMove) {
     } else if (computerMove === 'Scissors') {
       result = 'You Win!'
     }
+
   } else if (playerMove === 'Paper') {
     if (computerMove === 'Rock') {
       result = 'You Win!';
@@ -42,9 +53,8 @@ function playGame(playerMove) {
   }
 
   alert(`You picked ${playerMove}, Computer picked ${computerMove}. ${result}
-  Wins: ${score.wins}, Draws: ${score.draws}, Losses: ${score.losses}`);
+Wins: ${score.wins}, Draws: ${score.draws}, Losses: ${score.losses}`);
   return result;
-
 }
 
 function pickComputerMove() {
