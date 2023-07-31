@@ -41,8 +41,8 @@ function playGame(playerMove) {
     score.draws++;
   }
 
-  console.log(score);
-  alert(`You picked ${playerMove}, Computer picked ${computerMove}. ${result}`);
+  alert(`You picked ${playerMove}, Computer picked ${computerMove}. ${result}
+  Wins: ${score.wins}, Draws: ${score.draws}, Losses: ${score.losses}`);
   return result;
 
 }
