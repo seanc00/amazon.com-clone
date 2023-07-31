@@ -1,5 +1,4 @@
 function chooseRock() {
-  let result = '';
   //code to determine winner
   if (computerMove === 'Rock') {
     result = 'Draw';
@@ -17,7 +16,6 @@ function chooseRock() {
 }
 
 function choosePaper() {
-  let result = '';
   //code to determine winner
   if (computerMove === 'Rock') {
     result = 'You Win!';
@@ -33,7 +31,6 @@ function choosePaper() {
 }
 
 function chooseScissors() {
-  let result = '';
   //code to determine winner
   if (computerMove === 'Rock') {
     result = 'You Lose';
