@@ -1,52 +1,35 @@
-function chooseRock() {
+function playGame(playerMove) {
   computerMove = pickComputerMove();
-  //code to determine winner
-  if (computerMove === 'Rock') {
-    result = 'Draw';
-  } else if (computerMove === 'Paper') {
-    result = 'You Lose!'
-  } else if (computerMove === 'Scissors') {
-    result = 'You Win!'
+
+  if (playerMove === 'Scissors') {
+    if (computerMove === 'Rock') {
+      result = 'You Lose';
+    } else if (computerMove === 'Paper') {
+      result = 'You Win!';
+    } else if (computerMove === 'Scissors') {
+      result = 'Draw!';
+    }
+  } else if (playerMove === 'Rock') {
+    if (computerMove === 'Rock') {
+      result = 'Draw';
+    } else if (computerMove === 'Paper') {
+      result = 'You Lose!'
+    } else if (computerMove === 'Scissors') {
+      result = 'You Win!'
+    }
+  } else if (playerMove === 'Paper') {
+    if (computerMove === 'Rock') {
+      result = 'You Win!';
+    } else if (computerMove === 'Paper') {
+      result = 'Draw!'
+    } else if (computerMove === 'Scissors') {
+      result = 'You Lose!'
+    }
   }
-  // check code to see if works
-  //console.log(result);
-  
-  alert(`You picked Rock, Computer picked ${computerMove}. ${result}`);
+
+  alert(`You picked ${playerMove}, Computer picked ${computerMove}. ${result}`);
   return result;
 
-}
-
-function choosePaper() {
-  computerMove = pickComputerMove();
-  //code to determine winner
-  if (computerMove === 'Rock') {
-    result = 'You Win!';
-  } else if (computerMove === 'Paper') {
-    result = 'Draw!'
-  } else if (computerMove === 'Scissors') {
-    result = 'You Lose!'
-  }
-  // check code to see if works
-  //console.log(result);
-  alert(`You picked Paper, Computer picked ${computerMove}. ${result}`);
-  return result;
-}
-
-function chooseScissors() {
-  computerMove = pickComputerMove();
-  //code to determine winner
-  if (computerMove === 'Rock') {
-    result = 'You Lose';
-  } else if (computerMove === 'Paper') {
-    result = 'You Win!'
-  } else if (computerMove === 'Scissors') {
-    result = 'Draw!'
-  }
-  // check code to see if works
-  //console.log(result);
-
-  alert(`You picked Scissors, Computer picked ${computerMove}. ${result}`);
-  return result;
 }
 
 
