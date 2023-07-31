@@ -1,9 +1,15 @@
+const score = {
+  wins: 0,
+  draws: 0,
+  losses: 0
+};
+
 function playGame(playerMove) {
   computerMove = pickComputerMove();
 
   if (playerMove === 'Scissors') {
     if (computerMove === 'Rock') {
-      result = 'You Lose';
+      result = 'You Lose!';
     } else if (computerMove === 'Paper') {
       result = 'You Win!';
     } else if (computerMove === 'Scissors') {
@@ -11,7 +17,7 @@ function playGame(playerMove) {
     }
   } else if (playerMove === 'Rock') {
     if (computerMove === 'Rock') {
-      result = 'Draw';
+      result = 'Draw!';
     } else if (computerMove === 'Paper') {
       result = 'You Lose!'
     } else if (computerMove === 'Scissors') {
@@ -27,13 +33,19 @@ function playGame(playerMove) {
     }
   }
 
+  if (result === 'You Win!') {
+    score.wins++;
+  } else if (result === 'You Lose!') {
+    score.losses++;
+  } else if (result === 'Draw!') {
+    score.draws++;
+  }
+
+  console.log(score);
   alert(`You picked ${playerMove}, Computer picked ${computerMove}. ${result}`);
   return result;
 
 }
-
-
-
 
 function pickComputerMove() {
   //random number from 0-1
