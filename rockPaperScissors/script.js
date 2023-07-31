@@ -1,4 +1,5 @@
 function chooseRock() {
+  computerMove = pickComputerMove();
   //code to determine winner
   if (computerMove === 'Rock') {
     result = 'Draw';
@@ -16,6 +17,7 @@ function chooseRock() {
 }
 
 function choosePaper() {
+  computerMove = pickComputerMove();
   //code to determine winner
   if (computerMove === 'Rock') {
     result = 'You Win!';
@@ -31,6 +33,7 @@ function choosePaper() {
 }
 
 function chooseScissors() {
+  computerMove = pickComputerMove();
   //code to determine winner
   if (computerMove === 'Rock') {
     result = 'You Lose';
@@ -46,10 +49,13 @@ function chooseScissors() {
   return result;
 }
 
-const randomNumber = Math.random();
-let computerMove = '';
 
-function PickComputerMove() {
+
+
+function pickComputerMove() {
+  //random number from 0-1
+  const randomNumber = Math.random();
+
   // code to randomise computer move
   if (randomNumber >= 0 && randomNumber <= 1/3) {
     computerMove = 'Rock';
@@ -58,6 +64,8 @@ function PickComputerMove() {
   } else  if (randomNumber > 2/3 && randomNumber < 1) {
     computerMove = 'Paper';
   }
+
+  return computerMove;
   // check to see if code works
   //console.log(computerMove);
 }
