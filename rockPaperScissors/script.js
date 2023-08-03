@@ -1,12 +1,21 @@
-let score = JSON.parse(localStorage.getItem('score'));
+// shortcut way of doing code below, if first value is truthy itll 
+// save score from local storage, if falsy, itll default set score 
+// to the object
+let score = JSON.parse(localStorage.getItem('score')) || {
+    wins: 0,
+    losses: 0,
+    draws: 0
+  };
 
-if (score === null) {
+/*  does the same thing as code above
+if (!score) {
   score = {
     wins: 0,
     losses: 0,
     draws: 0
   };
 }
+*/
 
 function resetScore() {
   score.wins = 0;
