@@ -1,20 +1,28 @@
-const score = {
-  wins: 0,
-  draws: 0,
-  losses: 0
-};
+let score = JSON.parse(localStorage.getItem('score'));
+
+if (score === null) {
+  score = {
+    wins: 0,
+    losses: 0,
+    draws: 0
+  };
+}
 
 function resetScore() {
   score.wins = 0;
   score.losses = 0;
   score.draws = 0;
 
+  localStorage.removeItem('score');
+
   alert(`Score Reset
 Wins: ${score.wins}, Draws: ${score.draws}, Losses: ${score.losses}`);
 }
 
+localStorage.getItem('score');
+
 function playGame(playerMove) {
-  computerMove = pickComputerMove();
+  const computerMove = pickComputerMove();
 
   if (playerMove === 'Scissors') {
     if (computerMove === 'Rock') {
@@ -51,6 +59,8 @@ function playGame(playerMove) {
   } else if (result === 'Draw!') {
     score.draws++;
   }
+
+  localStorage.setItem('score', JSON.stringify(score));
 
   alert(`You picked ${playerMove}, Computer picked ${computerMove}. ${result}
 Wins: ${score.wins}, Draws: ${score.draws}, Losses: ${score.losses}`);
