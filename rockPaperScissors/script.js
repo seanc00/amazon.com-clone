@@ -23,9 +23,8 @@ function resetScore() {
   score.draws = 0;
 
   localStorage.removeItem('score');
-
-  alert(`Score Reset
-Wins: ${score.wins}, Draws: ${score.draws}, Losses: ${score.losses}`);
+  
+  updateScoreElem();
 }
 
 localStorage.getItem('score');
@@ -71,10 +70,11 @@ function playGame(playerMove) {
 
   localStorage.setItem('score', JSON.stringify(score));
 
-  alert(`You picked ${playerMove}, Computer picked ${computerMove}. ${result}
-Wins: ${score.wins}, Draws: ${score.draws}, Losses: ${score.losses}`);
-  return result;
+  updateScoreElem();
+
 }
+
+
 
 function pickComputerMove() {
   //random number from 0-1
@@ -92,4 +92,10 @@ function pickComputerMove() {
   return computerMove;
   // check to see if code works
   //console.log(computerMove);
+}
+
+function updateScoreElem() {
+  document.querySelector('.gameScore')
+    .innerHTML = `Wins: ${score.wins}, Draws: ${score.draws}, Losses: ${score.losses}`;
+
 }
