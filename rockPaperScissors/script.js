@@ -7,6 +7,9 @@ let score = JSON.parse(localStorage.getItem('score')) || {
     draws: 0
   };
 
+
+  
+
 /*  does the same thing as code above
 if (!score) {
   score = {
@@ -23,7 +26,13 @@ function resetScore() {
   score.draws = 0;
 
   localStorage.removeItem('score');
-  
+
+  // removes playerOutcome and choices from html
+  document.querySelector('.playerOutcome')
+  .innerHTML = ``;
+  document.querySelector('.gameChoices')
+    .innerHTML = ``;
+
   updateScoreElem();
 }
 
@@ -69,6 +78,15 @@ function playGame(playerMove) {
   }
 
   localStorage.setItem('score', JSON.stringify(score));
+
+  document.querySelector('.playerOutcome')
+    .innerHTML = `${result}`;
+
+  document.querySelector('.gameChoices')
+    .innerHTML = `You: ${playerMove} || Computer: ${computerMove}`;
+
+
+  
 
   updateScoreElem();
 
